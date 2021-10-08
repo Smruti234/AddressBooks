@@ -81,5 +81,10 @@ public class AddressBook {
 				+ "]";
 	}
 
+	public void remove(AddressBook addressbook) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
 

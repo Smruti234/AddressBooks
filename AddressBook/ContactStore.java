@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ContactStore {
-	private Set<AddressBook> contactList = new HashSet<>();
+	private HashSet<AddressBook> contactList = new HashSet<>();
 
 	public Set<AddressBook> getContactList() {
 		return contactList;
@@ -17,5 +17,6 @@ public class ContactStore {
 		contactList.remove(contact);
 	}
 }
+
 
 
