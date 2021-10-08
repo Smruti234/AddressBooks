@@ -26,13 +26,10 @@ public class AddressBookMain {
 			addressbook1.setZip(sc.nextLine());
 			addressbook1.setPhoneNumber(sc.nextLine());
 			addressbook1.setEmail(sc.nextLine());
-			//sc.close();
-
-
+			
 			ContactStore contactStore = new ContactStore();
 			contactStore.add(addressbook);
 			contactStore.add(addressbook1);
-
 
 			UserInterface user = new UserInterface();
 			user.print(contactStore.getContactList());
