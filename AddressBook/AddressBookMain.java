@@ -26,7 +26,7 @@ public class AddressBookMain {
 			addressbook1.setZip(sc.nextLine());
 			addressbook1.setPhoneNumber(sc.nextLine());
 			addressbook1.setEmail(sc.nextLine());
-			sc.close();
+			//sc.close();
 
 
 			ContactStore contactStore = new ContactStore();
@@ -35,6 +35,16 @@ public class AddressBookMain {
 
 
 			UserInterface user = new UserInterface();
+			user.print(contactStore.getContactList());
+			
+			Scanner s = new Scanner(System.in);
+			System.out.println("Enter name of contact you want to edit");
+			String name = s.nextLine();
+			if(addressbook.getFirstname().equalsIgnoreCase(name) == true)
+				UserInterface.edit(addressbook);
+			 if(addressbook1.getFirstname().equalsIgnoreCase(name) == true)
+				 UserInterface.edit(addressbook1);
+					System.out.println("Contact List after edit");
 			user.print(contactStore.getContactList());
 
 		}

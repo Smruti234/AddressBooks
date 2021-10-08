@@ -13,6 +13,9 @@ public class ContactStore {
 	public void add(AddressBook address) {
 		contactList.add(address);
 	}
+	public void edit(AddressBook contact) {
+		contactList.remove(contact);
+	}
 }
 
 
