@@ -37,12 +37,13 @@ public class AddressBookMain {
 			Scanner s = new Scanner(System.in);
 			System.out.println("Enter name of contact you want to edit");
 			String name = s.nextLine();
-			if(addressbook.getFirstname().equalsIgnoreCase(name) == true)
-				addressbook.setFirstname(name);
+			if(addressbook.getFirstname().equalsIgnoreCase(name) == true)	
 				UserInterface.edit(addressbook);
+		                 addressbook.setFirstname(name);
 			 if(addressbook1.getFirstname().equalsIgnoreCase(name) == true)
 				 UserInterface.edit(addressbook1);
-					System.out.println("Contact List after edit");
+		                 addressbook1.setFirstname(name);
+				System.out.println("Contact List after edit");
 			user.print(contactStore.getContactList());
 
 		}
