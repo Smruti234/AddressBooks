@@ -32,27 +32,22 @@ public class AddressBookMain {
 			contactStore.add(addressbook);
 			contactStore.add(addressbook1);
 
-
 			UserInterface user = new UserInterface();
 			user.print(contactStore.getContactList());
 			
-			
-			
 			Scanner sc1 = new Scanner(System.in);
-			System.out.println("Enter name of contact you want to edit");
+			System.out.println("Enter name of contact you want to remove");
 			String name1 = sc1.nextLine();
-			if(addressbook.getFirstname().equalsIgnoreCase(name1) == true)
-				addressbook.setFirstname(name);
-				UserInterface.remove(addressbook);
-			 if(addressbook1.getFirstname().equalsIgnoreCase(name1) == true)
-				 UserInterface.remove(addressbook1);
-				System.out.println("Contact List after edit");
+			if(addressbook.getFirstname().equalsIgnoreCase(name) == true)				
+				UserInterface.delete(addressbook);
+		                addressbook.setFirstname(name);
+			 if(addressbook1.getFirstname().equalsIgnoreCase(name) == true)
+				 UserInterface.delete(addressbook1);
+		                 addressbook1.setFirstname(name);
+				 System.out.println("Contact List after remove");
 			user.print(contactStore.getContactList());
 			
-			
-
 		}
-	
 	}
 
 
