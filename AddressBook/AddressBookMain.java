@@ -36,24 +36,17 @@ public class AddressBookMain {
 			UserInterface user = new UserInterface();
 			user.print(contactStore.getContactList());
 			
-			Scanner s = new Scanner(System.in);
-			System.out.println("Enter name of contact you want to edit");
-			String name = s.nextLine();
-			if(addressbook.getFirstname().equalsIgnoreCase(name) == true)
-				UserInterface.edit(addressbook);
-			 if(addressbook1.getFirstname().equalsIgnoreCase(name) == true)
-				 UserInterface.edit(addressbook1);
-					System.out.println("Contact List after edit");
-			user.print(contactStore.getContactList());
+			
 			
 			Scanner sc1 = new Scanner(System.in);
 			System.out.println("Enter name of contact you want to edit");
 			String name1 = sc1.nextLine();
 			if(addressbook.getFirstname().equalsIgnoreCase(name1) == true)
+				addressbook.setFirstname(name);
 				UserInterface.remove(addressbook);
 			 if(addressbook1.getFirstname().equalsIgnoreCase(name1) == true)
 				 UserInterface.remove(addressbook1);
-					System.out.println("Contact List after edit");
+				System.out.println("Contact List after edit");
 			user.print(contactStore.getContactList());
 			
 			
