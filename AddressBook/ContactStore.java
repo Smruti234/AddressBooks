@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class ContactStore {
-	private HashSet<AddressBook> contactList = new HashSet<>();
+	private Set<AddressBook> contactList = new HashSet<>();
 
 	public Set<AddressBook> getContactList() {
 		return contactList;
@@ -13,10 +13,13 @@ public class ContactStore {
 	public void add(AddressBook address) {
 		contactList.add(address);
 	}
-	public void edit(AddressBook contact) {
-		contactList.remove(contact);
+
+	public void remove(AddressBook addressbook) {
+		// TODO Auto-generated method stub
+		
 	}
 }
+
 
 
 

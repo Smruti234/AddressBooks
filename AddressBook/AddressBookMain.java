@@ -3,6 +3,8 @@ package AddressBook;
 import java.util.Scanner;
 
 public class AddressBookMain {
+	private static final AddressBook newContact = null;
+
 	public static void main(String[] args) {
 		  AddressBook addressbook = new AddressBook();
 
@@ -15,52 +17,42 @@ public class AddressBookMain {
 			addressbook.setEmail("slenka132@gmail.com");
 			addressbook.setPhoneNumber("7504614661");
 			
-			AddressBook addressbook1 = new AddressBook();
-			Scanner sc = new Scanner(System.in);
-			System.out.println("Enter details  new person firstName,lastName,address,city,state,zip,phoneNumber,Email ");
-			addressbook1.setFirstname(sc.nextLine());
-			addressbook1.setLastname(sc.nextLine());
-			addressbook1.setAddress(sc.nextLine());
-			addressbook1.setCity(sc.nextLine());
-			addressbook1.setStat(sc.nextLine());
-			addressbook1.setZip(sc.nextLine());
-			addressbook1.setPhoneNumber(sc.nextLine());
-			addressbook1.setEmail(sc.nextLine());
-			
 			
 			ContactStore contactStore = new ContactStore();
 			contactStore.add(addressbook);
-			contactStore.add(addressbook1);
-
-
-			UserInterface user = new UserInterface();
-			user.print(contactStore.getContactList());
 			
-			Scanner s = new Scanner(System.in);
-			System.out.println("Enter name of contact you want to edit");
-			String name = s.nextLine();
-			if(addressbook.getFirstname().equalsIgnoreCase(name) == true)
-				UserInterface.edit(addressbook);
-			 if(addressbook1.getFirstname().equalsIgnoreCase(name) == true)
-				 UserInterface.edit(addressbook1);
-					System.out.println("Contact List after edit");
-			user.print(contactStore.getContactList());
 			
+			 UserInterface userinterface = new  UserInterface();
+			userinterface.print(contactStore.getContactList());
+			
+			Scanner sc = new Scanner(System.in);
+			System.out.println("enter number of users");
+			int n=sc.nextInt();
+			for(int i = 1; i <= n; i++)
+			{
+			AddressBook newContact = new AddressBook();
 			Scanner sc1 = new Scanner(System.in);
-			System.out.println("Enter name of contact you want to edit");
-			String name1 = sc1.nextLine();
-			if(addressbook.getFirstname().equalsIgnoreCase(name1) == true)
-				UserInterface.remove(addressbook);
-			 if(addressbook1.getFirstname().equalsIgnoreCase(name1) == true)
-				 UserInterface.remove(addressbook1);
-					System.out.println("Contact List after edit");
-			user.print(contactStore.getContactList());
-			
-			
-
+			System.out.println("Enter  you details ");
+			System.out.println("Enter first name ");
+			newContact.setFirstname(sc1.nextLine());
+			System.out.println("enter last name ");
+			newContact.setLastname(sc1.nextLine());
+			System.out.println("enter address ");
+			newContact.setAddress(sc1.nextLine());
+			System.out.println("enter city ");
+			newContact.setCity(sc1.nextLine());
+			System.out.println("enter state ");
+			newContact.setStat(sc1.nextLine());
+			System.out.println("enter zip ");
+			newContact.setZip(sc1.nextLine());
+			System.out.println("enter phone number ");
+			newContact.setPhoneNumber(sc1.nextLine());
+			System.out.println("enter email ");
+			newContact.setEmail(sc1.nextLine());
+			contactStore.add(newContact);
+			userinterface.print(contactStore.getContactList());
+			}
 		}
-	
 	}
-
-
+			
 
